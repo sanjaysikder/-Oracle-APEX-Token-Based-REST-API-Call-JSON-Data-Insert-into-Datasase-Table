@@ -37,7 +37,7 @@ BEGIN
 
     -- Step 3: Call Token API
     l_response_clob := apex_web_service.make_rest_request(
-        p_url         => 'https://api.finance.gov.bd/acsapi/api/token',
+        p_url         => 'https://acpi.financebd.gov.bd/accsapi/api/token',
         p_http_method => 'POST',
         p_body        => l_request_body
     );
@@ -57,7 +57,7 @@ BEGIN
 
     -- Step 6: Call Challan তথ্য API
     l_result_clob := apex_web_service.make_rest_request(
-        p_url         => 'https://api.finance.gov.bd/acsapi/api/clients/payment/challanInfo?challan_no=' || p_chalan_no,
+        p_url         => 'https://acpi.financebd.gov.bd/accsapi/api/clients/payment/challanInfo?challan_no=' || p_chalan_no,
         p_http_method => 'GET'
     );
 
